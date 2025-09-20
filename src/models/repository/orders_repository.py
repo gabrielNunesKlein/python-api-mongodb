@@ -27,7 +27,7 @@ class OrdersRepository:
     def select_many_with_properties(self, doc_filter: dict) -> dict:
         collection = self.__db_connection.get_collection(self.__collection_name)
 
-        data = collection.find_one(
+        data = collection.find(
             doc_filter, # Tipo de Filtro
             { "_id": 0, "cupom": 0 } # Opções de retorno
         )
