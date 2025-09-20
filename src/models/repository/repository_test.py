@@ -99,9 +99,25 @@ def test_select_many_with_or_select():
     for doc in response:
         print(doc)
 
+@pytest.mark.skip(reason="interacao com o banco")
 def test_selecte_by_object_id():
     orders_repository = OrdersRepository(conn)
 
     response = orders_repository.selecte_by_object_id("68ceaad7d9edce8da7d84210")
     print()
     print(response)
+
+@pytest.mark.skip(reason="interacao com o banco")
+def test_edit_registry():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_registry("68ceaad7d9edce8da7d84210")
+
+@pytest.mark.skip(reason="interacao com o banco")
+def test_edit_many_registry():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_many_registry()
+
+@pytest.mark.skip(reason="interacao com o banco")
+def test_edit_registry_increment():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_registry_increment()
